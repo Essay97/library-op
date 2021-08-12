@@ -103,7 +103,10 @@ function renderLibrary() {
 
   let dummy;
 
-  while (booksList.childElementCount % columnsNumber !== 0) {
+  while (
+    booksList.childElementCount % columnsNumber !== 0 ||
+    booksList.childElementCount === 0
+  ) {
     dummy = document.createElement("li");
     dummy.className = "book-card";
     booksList.appendChild(dummy);

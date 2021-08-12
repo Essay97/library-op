@@ -11,9 +11,14 @@
   --coffee: hsla(30, 35%, 31%, 1);
   --cafe-au-lait: hsla(26, 31%, 53%, 1);
   --t-blue: hsl(216, 100%, 46%);
+  --t-blue-d: hsl(216, 86%, 25%);
   --t-red: hsl(0, 100%, 67%);
+  --t-red-d: hsl(0, 60%, 45%);
   --t-yellow: hsl(52, 100%, 50%);
+  --t-yellow-3: hsl(52, 91%, 47%);
+  --t-yellow-d: hsl(46, 100%, 50%);
   --t-green: hsl(172, 100%, 39%);
+  --t-green-d: hsl(172, 89%, 29%);
   font-family: "Merriweather", serif;
 }
 
@@ -75,6 +80,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  min-height: 12rem;
 }
 
 .book-card__author {
@@ -142,16 +148,29 @@ body {
 .btn {
   padding: 0.5rem 2rem;
   background-color: var(--t-yellow);
-  border: none;
+  border: 8px solid transparent;
   width: 10rem;
+}
+
+.btn:active {
+  border-color: var(--t-yellow-d);
+  transition: 300ms;
 }
 
 .btn--active {
   background-color: var(--t-green);
 }
 
+.btn--active:active {
+  border-color: var(--t-green-d);
+}
+
 .btn--inactive {
   background-color: var(--t-red);
+}
+
+.btn--inactive:active {
+  border-color: var(--t-red-d);
 }
 
 .btn--flex-center {
