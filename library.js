@@ -7,10 +7,6 @@ function Book(title, author, read) {
 }
 
 let myLibrary = JSON.parse(window.localStorage.getItem("library")) || [];
-/* [
-  new Book("The Hobbit", "JRR Tolkien", true),
-  new Book("Harry Potter", "JK Rowling", false),
-]; */
 
 function addBookToLibrary(book) {
   if (!(book instanceof Book)) {
