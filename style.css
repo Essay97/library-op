@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  --black: hsla(0, 100%, 1%, 1);
+  --camel: hsla(32, 48%, 60%, 1);
+  --coffee: hsla(30, 35%, 31%, 1);
+  --cafe-au-lait: hsla(26, 31%, 53%, 1);
+  --t-blue: hsl(216, 100%, 46%);
+  --t-red: hsl(0, 100%, 67%);
+  --t-yellow: hsl(52, 100%, 50%);
+  --t-green: hsl(172, 100%, 39%);
+  font-family: "Merriweather", serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--camel);
+  background-image: url("./assets/wood-pattern.png");
+}
+
+/* Navbar section */
+.navbar {
+  background: linear-gradient(
+    to bottom,
+    var(--cafe-au-lait),
+    40%,
+    var(--coffee)
+  );
+  color: white;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.navbar__title {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Cabin Sketch", cursive;
+}
+
+/* Library section */
+.library {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  align-items: flex-start;
+}
+
+/* Book list section */
+.books-list {
+  list-style: none;
+  margin: 3rem auto;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+  width: 90%;
+  grid-template-columns: repeat(5, 1fr);
+  border: 20px solid var(--coffee);
+  background-color: var(--coffee);
+}
+
+.book-card {
+  background-color: rgb(255, 255, 255);
+  padding: 1.3rem;
+  /* border: 10px solid var(--coffee); */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.book-card__author {
+  margin-bottom: auto;
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 1250px) {
+  .books-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .books-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .books-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .books-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Modal dialog component */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__content {
+  border: 2px solid blue;
+  background-color: rgb(205, 205, 255);
+  padding: 2.5rem;
+  border-radius: 4px;
+}
+
+/* Form component */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.form__buttons-container {
+  display: flex;
+  gap: 0.3rem;
+}
+
+/* Button components*/
+.btn {
+  padding: 0.5rem 2rem;
+  background-color: var(--t-yellow);
+  border: none;
+  width: 10rem;
+}
+
+.btn--active {
+  background-color: var(--t-green);
+}
+
+.btn--inactive {
+  background-color: var(--t-red);
+}
+
+.btn--flex-center {
+  align-self: center;
+}
+
+.btn--right {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn--big {
+  padding: 2rem 4rem;
+  width: auto;
+  font-size: 1.1rem;
+}
+
+.btn--auto {
+  width: auto;
+  padding: 0.5rem;
+}
+
+/* Utility classes */
+.-u-invisible {
+  display: none;
+}
+
+.-u-spacing-v {
+  margin: 1rem 0;
+}
+
+@media only screen and (max-width: 620px) {
+  .desktop-only {
+    display: none;
+    width: auto !important;
+  }
+}

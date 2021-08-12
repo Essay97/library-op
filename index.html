@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Library</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1 class="navbar__title">My Library</h1>
+      <button class="btn btn--right btn--auto" onclick="saveToLocalStorage()">
+        Save <span class="desktop-only">to <br />Local Storage</span>
+      </button>
+    </nav>
+    <section class="library">
+      <button
+        class="btn btn--flex-center btn--big"
+        onclick="toggleNewBookModal()"
+      >
+        Add book
+      </button>
+      <ul class="books-list"></ul>
+    </section>
+    <button hidden class="btn" onclick="debug()">Logger</button>
+
+    <div id="modal--new-book" class="modal -u-invisible">
+      <div class="modal__content">
+        <h3>New Book</h3>
+        <form class="form" onsubmit="handleSubmit(event)">
+          <input
+            type="text"
+            name="title"
+            id="title"
+            autofocus
+            autocomplete="off"
+          />
+          <input type="text" name="author" id="author" autocomplete="off" />
+          <label
+            ><input type="checkbox" name="read" id="read" /> I read this
+            book</label
+          >
+          <input
+            type="hidden"
+            name="acquisition"
+            id="acquisition"
+            value="false"
+          />
+          <div class="form__buttons-container">
+            <button class="btn" onclick="setNewBookAcquisition()">Add</button>
+            <button class="btn btn--inactive">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="modal--saved">
+      <div class="modal__content">
+        <h3 class="-u-spacing-v">Saved!</h3>
+        <button class="btn btn--inactive" onclick="toggleSavedModal()">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <script src="library.js"></script>
+  </body>
+</html>
