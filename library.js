@@ -9,16 +9,10 @@ function Book(title, author, read) {
 let myLibrary = JSON.parse(window.localStorage.getItem("library")) || [];
 
 function addBookToLibrary(book) {
-  if (!(book instanceof Book)) {
-    throw new Error("Expected instance of Book, received " + typeof book);
-  }
   myLibrary.push(book);
 }
 
 function deleteBookFromLibrary(book) {
-  if (!(book instanceof Book)) {
-    throw new Error("Expected instance of Book, received " + typeof book);
-  }
   myLibrary = myLibrary.filter((b) => b !== book);
 }
 
