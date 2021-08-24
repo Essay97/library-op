@@ -29,7 +29,6 @@ let columnsNumber = getColumnsNumber(window.innerWidth);
 window.addEventListener("resize", () => {
   columnsNumber = getColumnsNumber(window.innerWidth);
   renderLibrary();
-  console.log(columnsNumber);
 });
 
 function getColumnsNumber(width) {
@@ -149,10 +148,6 @@ function handleSubmit(event) {
 function setNewBookAcquisition() {
   const setAcquisition = document.querySelector("#acquisition");
   setAcquisition.value = true;
-}
-
-function debug() {
-  console.log(myLibrary.map((b) => b.read));
 }
 
 function saveToLocalStorage() {
